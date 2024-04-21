@@ -20,11 +20,10 @@ import {
 import {
   Colors,
   DebugInstructions,
+  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-
-import Header from "./components/Header"
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -77,9 +76,6 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="What is this">
-            This is a template app set up to build on top of.
-          </Section>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
