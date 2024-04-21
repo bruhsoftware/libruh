@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Alert,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -15,6 +16,8 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
+  Linking,
 } from 'react-native';
 
 import {
@@ -24,7 +27,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Header from "./components/Header"
+import Header from './components/Header';
+import Spacer from './components/Spacer';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -77,23 +81,27 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="What is this">
-            This is a template app set up to build on top of.
+          <Section title="Whats that">
+            A better app for Librus Synergia school register.
           </Section>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+
+          <Section title="But why">
+            <Text>
+              Because the official app is hot rubbish
+            </Text>
           </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
+
+          <Section title="Is it safe">
+            <Text onPress={() => Linking.openURL('https://git.parpok.xyz/bruh-software/libruh')}>
+
+            It's safe. Code for this app is public on our GitLab so you can check it out yourself. Also you already used sketchy third party apps so why not this one?
+
+            </Text>
           </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+
+          <Spacer size={50} />
+
+          <Button  onPress={() => Alert.alert("Login doesn't work rn.")} title="next" accessibilityLabel="Next"/>
         </View>
       </ScrollView>
     </SafeAreaView>
