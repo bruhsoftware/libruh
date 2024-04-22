@@ -33,10 +33,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
 import LandingPage from './pages/LandingPage';
 import SelectRegister from './pages/SelectRegister';
-import SynergiaLogin from './pages/SynergiaLogin';
+import SynergiaLogin from './modals/SynergiaLogin';
 import { useNavigation } from '@react-navigation/native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Main from '../ui/Main';
 
 const Stack = createStackNavigator();
 
@@ -54,7 +55,9 @@ function Login() {
           <Stack.Group>
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Landing", headerShown: false}}/>
             <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "E-register selection"}}/>
-            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia login", presentation: 'modal'}}/>
+          </Stack.Group>
+          <Stack.Group screenOptions={{presentation: 'modal'}}>
+            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia login"}}/>
           </Stack.Group>
         </Stack.Navigator>
     </>
