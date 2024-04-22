@@ -12,6 +12,7 @@ import {
   Button,
   Linking,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
 
 import {
@@ -90,6 +91,9 @@ function LandingPage({ navigation }): React.JSX.Element {
                 </TouchableOpacity>
             </View>
           </View>
+        </View>
+        <View style={{position: "absolute", bottom: 20}}>
+            <Text style={{position: "relative", color: "#AAA", textAlign: "center", width: Dimensions.get('window').width}}>! DEVELOPEMENT BUILD - WORK IN PROGRESS !</Text>
         </View>
       </>
     );

@@ -38,6 +38,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Main from '../ui/Main';
+import SynergiaLoginEasterEgg from './modals/SynergiaLoginEasterEgg';
 
 const Stack = createStackNavigator();
 
@@ -54,10 +55,11 @@ function Login() {
         <Stack.Navigator initialRouteName="home">
           <Stack.Group>
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Landing", headerShown: false}}/>
-            <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "E-register selection"}}/>
+            <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "E-register Selection"}}/>
           </Stack.Group>
           <Stack.Group screenOptions={{presentation: 'modal'}}>
-            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia login"}}/>
+            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia - Log in"}}/>
+            <Stack.Screen name="synergiaEasterEgg" component={SynergiaLoginEasterEgg} options={{headerTitle: ":3"}}/>
           </Stack.Group>
         </Stack.Navigator>
     </>
