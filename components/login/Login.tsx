@@ -27,17 +27,22 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Header from '../elements/Header';
+import Header from '../elements/login/Header';
 import Spacer from '../elements/Spacer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import LandingPage from './pages/LandingPage';
 import SelectRegister from './pages/SelectRegister';
 import SynergiaLogin from './pages/SynergiaLogin';
+import { useNavigation } from '@react-navigation/native';
 
-const Stack = createNativeStackNavigator();
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+const Stack = createStackNavigator();
 
 function Login() {
   const scheme = useColorScheme();
+  const navigation = useNavigation();
   return (
     <>
         <StatusBar
@@ -47,9 +52,9 @@ function Login() {
         />
         <Stack.Navigator initialRouteName="home">
           <Stack.Group>
-            <Stack.Screen name="home" component={LandingPage} options={{headerShown: false}}/>
-            <Stack.Screen name="registerSelection" component={SelectRegister}/>
-            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{ presentation: 'modal' }}/>
+            <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Landing", headerShown: false}}/>
+            <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "E-register selection"}}/>
+            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia login", presentation: 'modal'}}/>
           </Stack.Group>
         </Stack.Navigator>
     </>

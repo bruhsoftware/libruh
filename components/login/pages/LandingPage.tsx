@@ -11,6 +11,7 @@ import {
   View,
   Button,
   Linking,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -20,8 +21,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Header from '../../elements/Header';
+import Header from '../../elements/login/Header';
 import Spacer from '../../elements/Spacer';
+import Section from '../../elements/login/Section';
 
 const styles = StyleSheet.create({
     sectionContainer: {
@@ -41,37 +43,8 @@ const styles = StyleSheet.create({
       fontWeight: '700',
     },
   });
-
-type SectionProps = PropsWithChildren<{
-    title: string;
-  }>;
   
-  function Section({children, title}: SectionProps): React.JSX.Element {
-    const isDarkMode = useColorScheme() === 'dark';
-    return (
-      <View style={styles.sectionContainer}>
-        <Text
-          style={[
-            styles.sectionTitle,
-            {
-              color: isDarkMode ? Colors.white : Colors.black,
-            },
-          ]}>
-          {title}
-        </Text>
-        <Text
-          style={[
-            styles.sectionDescription,
-            {
-              color: isDarkMode ? Colors.light : Colors.dark,
-            },
-          ]}>
-          {children}
-        </Text>
-      </View>
-    );
-  }
-  // @ts-ignore
+// @ts-ignore
 function LandingPage({ navigation }): React.JSX.Element {
     const isDarkMode = useColorScheme() === 'dark';
   
@@ -84,37 +57,40 @@ function LandingPage({ navigation }): React.JSX.Element {
         <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         />
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-        >
+        <View>
           <Header />
           <View
             style={{
               backgroundColor: isDarkMode ? Colors.black : Colors.white,
             }}>
-            <Section title="Whats that">
-              A better app for Librus Synergia school register.
+            <Section title="What's this for?">
+              Libruh is a replacement app for the Librus® Synergia school register.
             </Section>
   
-            <Section title="But why">
+            <Section title="Why?">
               <Text>
-                Because the official app is hot rubbish
+                Because the official Librus® app is a WebView steaming pile of crap.
               </Text>
             </Section>
   
-            <Section title="Is it safe">
-              <Text onPress={() => Linking.openURL('https://git.parpok.xyz/bruh-software/libruh')}>
+            <Section title="Is it safe?">
+              <Text onPress={() => Linking.openURL('https://git.parpok.xyz/bruh-software/libruh')} style={[{textDecorationLine: "underline"}]}>
   
-              It's safe. Code for this app is public on our GitLab so you can check it out yourself. Also you already used sketchy third party apps so why not this one?
+              It's safe. The code for this app is public on our GitLab so you can check it out yourself. You can open the repository by clicking this text.
   
               </Text>
             </Section>
   
             <Spacer size={50} />
             {/* Alert.alert("Login doesn't work rn.") */}
-            <Button  onPress={() => navigation.navigate('registerSelection')} title="next" accessibilityLabel="Next"/>
+            {/*<Button  onPress={() => navigation.navigate('registerSelection')} title="Proceed" accessibilityLabel="Next"/>*/}
+            <View style={{paddingHorizontal: 24}}>
+                <TouchableOpacity onPress={() => navigation.navigate('registerSelection')} style={{backgroundColor: '#00aeef', borderRadius: 15, paddingVertical: 15}} >
+                    <Text style={{color: "#fff", textAlign:"center", fontSize: 20, fontWeight: "bold"}}>Continue</Text>
+                </TouchableOpacity>
+            </View>
           </View>
-        </ScrollView>
+        </View>
       </>
     );
   }

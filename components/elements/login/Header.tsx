@@ -21,7 +21,7 @@ const Header = (): ReactNode => {
     <ImageBackground
       accessibilityRole="image"
       testID="new-app-screen-header"
-      source={require('../../assets/landing-bg-logo.png')}
+      source={require('../../../assets/landing-bg-logo.png')}
       style={[
         styles.background,
       ]}
@@ -44,7 +44,7 @@ const Header = (): ReactNode => {
 const styles = StyleSheet.create({
   background: {
     paddingBottom: 40,
-    paddingTop: 96,
+    paddingTop: 112,
     paddingHorizontal: 32,
   },
   logo: {

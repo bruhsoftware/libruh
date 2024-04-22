@@ -1,13 +1,18 @@
 import { Button, Text, View } from "react-native";
+import SynergiaCard from "../../elements/login/SynergiaCard";
+import Section from "../../elements/login/Section";
 
 // @ts-ignore
 function SelectRegister({ navigation }) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>select register Screen</Text>
-        <Button title="Libruh Synergia" onPress={() => navigation.navigate('synergiaLogin')} />
-        <Button title="Go back" onPress={() => navigation.goBack()} />
-      </View>
+    <View>
+        <View>
+            <Section title="Pick your E-register">
+                You can pick your e-register provider from the list of supported providers below.
+            </Section>
+            <SynergiaCard/>
+        </View>
+    </View>
     );
 }
 
