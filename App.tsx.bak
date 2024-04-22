@@ -5,7 +5,7 @@
  * @format
  */
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -13,6 +13,7 @@ import { Button, StatusBar, Text, View, useColorScheme } from 'react-native';
 import type {StatusBarStyle} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DefaultTheme, DarkTheme } from '@react-navigation/native';
+import storage from './components/storage';
 
 
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -46,25 +47,36 @@ const Tab = createBottomTabNavigator();
 const LoginStack = createNativeStackNavigator();
 
 function App() {
-  /*storage.load({
-    key: 'loginCredentials',
-  }).then(data => {
-    // credentials were found
-    return (
-      <p style={{backgroundColor: 'red'}}>a</p>
-    )
-  }).catch(err => {
-    // no credentials were found
-    return (
-      <p style={{backgroundColor: 'blue'}}>b</p>
-    )
-  })*/
   const scheme = useColorScheme();
-  return (
-    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <LoginMain/>
-    </NavigationContainer>
-  )
+  storage.load({
+    key: 'loginCredentials',
+  })
+  .then(data => {
+    // data exists
+    return (
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <p>a</p>
+        <Main/>
+      </NavigationContainer>
+    );
+  })
+  .catch(err => {
+    // data not found or sum other error
+    return (
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <p>b</p>
+        <StatusBar
+            animated={true}
+            backgroundColor="#61dafb"
+            barStyle={scheme === 'dark' ? "light-content" : "dark-content"}
+        />
+        <LoginStack.Navigator initialRouteName="home" >
+            <LoginStack.Screen name="home" component={LoginPage} options={{}}/>
+            {/*<Stack.Screen name="Details" component={DetailsScreen}  options={{}}/>*/}
+        </LoginStack.Navigator>
+      </NavigationContainer>
+    );
+  });
 }
 
 export default App;

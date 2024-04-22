@@ -8,27 +8,22 @@
  * @format
  */
 
-// @ts-ignore
-import type {Node} from 'react';
+import type {ReactNode} from 'react';
 
 import {ImageBackground, Text, StyleSheet} from 'react-native';
 import {useColorScheme} from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import React from 'react';
 
-// @ts-ignore
-const Header = (): Node => {
+const Header = (): ReactNode => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <ImageBackground
       accessibilityRole="image"
       testID="new-app-screen-header"
-      source={require('../assets/landing-bg-logo.png')}
+      source={require('../../assets/landing-bg-logo.png')}
       style={[
         styles.background,
-        {
-          backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        },
       ]}
       imageStyle={styles.logo}>
       <Text

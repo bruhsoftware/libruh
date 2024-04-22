@@ -7,15 +7,23 @@
     "rncli:ios": "react-native run-ios",
     "rncli:lint": "eslint .",
     "rncli:start": "react-native start",
-    "start": "expo start --dev-client",
+    "start": "expo start --go",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.23.1",
+    "@react-navigation/bottom-tabs": "^6.5.20",
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native-stack": "^6.9.26",
     "expo": "^50.0.17",
+    "librus-api": "^2.10.4",
     "react": "18.2.0",
-    "react-native": "0.73.7"
+    "react-native": "0.73.7",
+    "react-native-safe-area-context": "4.8.2",
+    "react-native-screens": "~3.29.0",
+    "react-native-storage": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
