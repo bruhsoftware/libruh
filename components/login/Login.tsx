@@ -27,18 +27,18 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Header from '../elements/login/Header';
-import Spacer from '../elements/Spacer';
+import Header from '@ui/login/elements/Header';
+import Spacer from '@ui/elements/Spacer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
-import LandingPage from './pages/LandingPage';
-import SelectRegister from './pages/SelectRegister';
-import SynergiaLogin from './modals/SynergiaLogin';
+import LandingPage from '@ui/login/pages/LandingPage';
+import SelectRegister from '@ui/login/pages/SelectRegister';
+import SynergiaLogin from '@ui/login/modals/SynergiaLogin';
 import { useNavigation } from '@react-navigation/native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import Main from '../ui/Main';
-import SynergiaLoginEasterEgg from './modals/SynergiaLoginEasterEgg';
+import Main from '@ui';
+import SynergiaLoginEasterEgg from '@ui/login/modals/SynergiaLoginEasterEgg';
 
 const Stack = createStackNavigator();
 
@@ -47,11 +47,6 @@ function Login() {
   const navigation = useNavigation();
   return (
     <>
-        <StatusBar
-            animated={true}
-            backgroundColor="#61dafb"
-            barStyle={scheme === 'dark' ? "light-content" : "dark-content"}
-        />
         <Stack.Navigator initialRouteName="home">
           <Stack.Group>
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Landing", headerShown: false}}/>

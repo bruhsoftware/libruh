@@ -1,4 +1,9 @@
 {
   "name": "libruh",
-  "displayName": "libruh"
+  "displayName": "libruh",
+  "expo": {
+    "experiments": {
+      "tsconfigPaths": true
+    }
+  }
 }

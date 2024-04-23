@@ -2680,6 +2680,13 @@ agent-base@^7.1.0:
   dependencies:
     debug "^4.3.4"
 
+agent-base@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.npmjs.org/agent-base/-/agent-base-7.1.1.tgz"
+  integrity sha512-H0TSyFNDMomMNJQBn8wFV5YC/2eJ+VXECwOadZJT554xP6cODZHPX3H9QMQECxvrgiSOP1pHjy1sMWQVYJOUOA==
+  dependencies:
+    debug "^4.3.4"
+
 agent-base@6:
   version "6.0.2"
   resolved "https://registry.npmjs.org/agent-base/-/agent-base-6.0.2.tgz"
@@ -2982,7 +2989,14 @@ axios-cookiejar-support@^4.0.3:
   dependencies:
     http-cookie-agent "^5.0.4"
 
-axios@^1.2.1, axios@>=0.20.0:
+axios-cookiejar-support@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npmjs.org/axios-cookiejar-support/-/axios-cookiejar-support-5.0.1.tgz"
+  integrity sha512-lwjyusKDJ1dLMRPnARWJCdcRXqmYvNITHnCQHRJGtIIL2QXj/lYPjMg04XZDp8QItzluu0KJqbjYlvI0+5X5Xw==
+  dependencies:
+    http-cookie-agent "^6.0.3"
+
+axios@^1.2.1, axios@^1.6.8, axios@>=0.20.0:
   version "1.6.8"
   resolved "https://registry.npmjs.org/axios/-/axios-1.6.8.tgz"
   integrity sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
@@ -4051,6 +4065,11 @@ dir-glob@^3.0.1:
   integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
   dependencies:
     path-type "^4.0.0"
+
+directory-import@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.npmjs.org/directory-import/-/directory-import-3.3.1.tgz"
+  integrity sha512-d9paCbverdqmuwR+B40phSqiHhgPKiP8dpsMz5WT9U6ug2VVQ3tqXNCedpa6iGHg6mgv9lHaoq5DJUu2IXMjsQ==
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -5324,6 +5343,13 @@ http-cookie-agent@^5.0.4:
   dependencies:
     agent-base "^7.1.0"
 
+http-cookie-agent@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.npmjs.org/http-cookie-agent/-/http-cookie-agent-6.0.3.tgz"
+  integrity sha512-6JdymEgWgsg9VQ5VN9FGpRRcivyu4WdM0Ud3kW+Q0PB7knt0EFtlhNPU8wCuscXLfIEI5y6jEMdFTBODNsJR6g==
+  dependencies:
+    agent-base "^7.1.1"
+
 http-errors@2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/http-errors/-/http-errors-2.0.0.tgz"
@@ -6519,6 +6545,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -8066,7 +8097,7 @@ request-promise-core@1.1.4:
   dependencies:
     lodash "^4.17.19"
 
-request-promise@^4.2.2:
+request-promise@^4.2.2, request-promise@^4.2.6:
   version "4.2.6"
   resolved "https://registry.npmjs.org/request-promise/-/request-promise-4.2.6.tgz"
   integrity sha512-HCHI3DJJUakkOr8fNoCc73E5nU5bqITjOYFMDrKHYOXWXrgD/SBaC7LjwuPymUprRyuF06UK7hd/lMHkmUXglQ==
@@ -8076,7 +8107,7 @@ request-promise@^4.2.2:
     stealthy-require "^1.1.1"
     tough-cookie "^2.3.3"
 
-request@^2.34:
+request@^2.34, request@^2.88.2:
   version "2.88.2"
   resolved "https://registry.npmjs.org/request/-/request-2.88.2.tgz"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -9027,7 +9058,7 @@ tough-cookie@^2.3.3:
     psl "^1.1.28"
     punycode "^2.1.1"
 
-tough-cookie@^4.0.0, tough-cookie@^4.1.2, tough-cookie@>=4.0.0:
+tough-cookie@^4.0.0, tough-cookie@^4.1.2, tough-cookie@^4.1.3, tough-cookie@>=4.0.0:
   version "4.1.3"
   resolved "https://registry.npmjs.org/tough-cookie/-/tough-cookie-4.1.3.tgz"
   integrity sha512-aX/y5pVRkfRnfmuX+OdbSdXvPe6ieKX/G2s7e98f4poJHnqH3281gDPm/metm6E/WRamfx7WC4HUqkWHfQHprw==

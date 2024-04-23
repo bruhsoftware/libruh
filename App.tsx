@@ -16,8 +16,9 @@ import { DefaultTheme, DarkTheme } from '@react-navigation/native';
 
 
 import Ionicons from '@expo/vector-icons/Ionicons';
-import Main from './components/ui/Main';
-import LoginMain from './components/login/Login';
+import Main from '@ui';
+import LoginMain from '@ui/login';
+import { LibruhThemeDark, LibruhThemeLight } from '@constants/themes';
 
 // @ts-ignore
 function HomeScreen({ navigation }) {
@@ -59,11 +60,15 @@ function App() {
       <p style={{backgroundColor: 'blue'}}>b</p>
     )
   })*/
-  const scheme = useColorScheme();
+  //const scheme = useColorScheme();
+  let scheme = 'light'
   return (
-    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <>
+    <NavigationContainer theme={scheme === 'dark' ? LibruhThemeDark : LibruhThemeLight }>
+      <StatusBar barStyle={scheme === 'dark' ? "light-content" : "dark-content"} animated={true}/>
       <LoginMain/>
     </NavigationContainer>
+    </>
   )
 }
 

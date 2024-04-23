@@ -1,6 +1,6 @@
 import { Button, Text, View } from "react-native";
-import SynergiaCard from "../../elements/login/SynergiaCard";
-import Section from "../../elements/login/Section";
+import SynergiaCard from "@ui/login/elements/SynergiaCard";
+import Section from "@ui/elements/Section";
 
 // @ts-ignore
 function SelectRegister({ navigation }) {

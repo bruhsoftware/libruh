@@ -22,9 +22,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Header from '../../elements/login/Header';
-import Spacer from '../../elements/Spacer';
-import Section from '../../elements/login/Section';
+import Header from '@ui/login/elements/Header';
+import Spacer from '@ui/elements/Spacer';
+import Section from '@ui/elements/Section';
+
+// not sure if this is safe but i dont care
+import { version } from '@package';
+import { useTheme } from '@react-navigation/native';
+import { LibruhThemeDark, LibruhThemeLight } from '@constants/themes';
 
 const styles = StyleSheet.create({
     sectionContainer: {
@@ -47,22 +52,20 @@ const styles = StyleSheet.create({
   
 // @ts-ignore
 function LandingPage({ navigation }): React.JSX.Element {
-    const isDarkMode = useColorScheme() === 'dark';
+    const {dark} = useTheme();
+    const colors = (dark ? LibruhThemeDark.colors : LibruhThemeLight.colors)
   
-    const backgroundStyle = {
+    /*const backgroundStyle = {
       backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    };
+    };*/
   
     return (
       <>
-        <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        />
         <View>
           <Header />
           <View
             style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
+              backgroundColor: colors.background,
             }}>
             <Section title="What's this for?">
               Libruh is a replacement app for the Librus® Synergia school register.
@@ -86,14 +89,15 @@ function LandingPage({ navigation }): React.JSX.Element {
             {/* Alert.alert("Login doesn't work rn.") */}
             {/*<Button  onPress={() => navigation.navigate('registerSelection')} title="Proceed" accessibilityLabel="Next"/>*/}
             <View style={{paddingHorizontal: 24}}>
-                <TouchableOpacity onPress={() => navigation.navigate('registerSelection')} style={{backgroundColor: '#00aeef', borderRadius: 15, paddingVertical: 15}} >
-                    <Text style={{color: "#fff", textAlign:"center", fontSize: 20, fontWeight: "bold"}}>Continue</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('registerSelection')} style={{backgroundColor: colors.primary, borderRadius: 15, paddingVertical: 15}} >
+                    <Text style={{color: "#fff", textAlign:"center", fontSize: 20, fontWeight: "600"}}>Proceed</Text>
                 </TouchableOpacity>
             </View>
           </View>
         </View>
-        <View style={{position: "absolute", bottom: 20}}>
-            <Text style={{position: "relative", color: "#AAA", textAlign: "center", width: Dimensions.get('window').width}}>! DEVELOPEMENT BUILD - WORK IN PROGRESS !</Text>
+        <View style={{position: "relative", bottom: -45}}>
+            <Text style={{position: "relative", color: "#999", textAlign: "center", paddingHorizontal: 24, width: Dimensions.get('window').width}}>DEV -  v{version}</Text>
+            <Text style={{position: "relative", color: "#666", textAlign: "center", fontSize: 11, width: Dimensions.get('window').width, paddingHorizontal: 24}}>All trademarks used in this app remain the property of their rightful owners and are used for informational purposes only.</Text>
         </View>
       </>
     );

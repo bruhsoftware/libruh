@@ -1,3 +1,37 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@ui/login": [
+        "./components/login/Login.tsx"
+      ],
+      "@ui/login/*": [
+        "./components/login/*"
+      ],
+      "@ui": [
+        "./components/ui/Main.tsx"
+      ],
+      "@ui/*": [
+        "./components/ui/*"
+      ],
+      "@ui/elements/*": [
+        "./components/elements/*"
+      ],
+      "@constants/*": [
+        "./constants/*"
+      ],
+      "@package": [
+        "./package.json"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@librus": [
+        "./lib/librus/api.js"
+      ],
+      "@librus/*": [
+        "./lib/librus/*"
+      ],
+    }
+  }
 }

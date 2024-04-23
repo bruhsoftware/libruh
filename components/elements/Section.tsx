@@ -1,6 +1,6 @@
+import { useTheme } from "@react-navigation/native";
 import { PropsWithChildren } from "react";
 import { StyleSheet, Text, View, useColorScheme } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const styles = StyleSheet.create({
     sectionContainer: {
@@ -26,6 +26,7 @@ type SectionProps = PropsWithChildren<{
   }>;
   
   function Section({children, title}: SectionProps): React.JSX.Element {
+    const { colors, dark } = useTheme();
     const isDarkMode = useColorScheme() === 'dark';
     return (
       <View style={styles.sectionContainer}>
@@ -33,7 +34,7 @@ type SectionProps = PropsWithChildren<{
           style={[
             styles.sectionTitle,
             {
-              color: isDarkMode ? Colors.white : Colors.black,
+              color: colors.text,
             },
           ]}>
           {title}
@@ -42,7 +43,7 @@ type SectionProps = PropsWithChildren<{
           style={[
             styles.sectionDescription,
             {
-              color: isDarkMode ? Colors.light : Colors.dark,
+              color: colors.text,
             },
           ]}>
           {children}

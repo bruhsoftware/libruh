@@ -12,25 +12,26 @@ import type {ReactNode} from 'react';
 
 import {ImageBackground, Text, StyleSheet} from 'react-native';
 import {useColorScheme} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import React from 'react';
+import { useTheme } from '@react-navigation/native';
 
 const Header = (): ReactNode => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const { colors, dark } = useTheme();
   return (
     <ImageBackground
       accessibilityRole="image"
       testID="new-app-screen-header"
-      source={require('../../../assets/landing-bg-logo.png')}
+      source={require('@assets/landing-bg-logo.png')}
       style={[
         styles.background,
+        {}
       ]}
-      imageStyle={styles.logo}>
+      imageStyle={[styles.logo, { opacity: (dark ? 0.2 : 0.8)}]}>
       <Text
         style={[
           styles.text,
           {
-            color: isDarkMode ? Colors.white : Colors.black,
+            color: colors.text,
           },
         ]}>
         Welcome to
@@ -48,7 +49,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
   },
   logo: {
-    opacity: 0.2,
     overflow: 'visible',
     resizeMode: 'cover',
     /*
