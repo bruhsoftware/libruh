@@ -3,9 +3,7 @@ import React, { useRef } from "react";
 import { Alert, Button, Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { LibruhThemeDark, LibruhThemeLight } from "@constants/themes";
 import { Ionicons } from '@expo/vector-icons';
-import { Librus } from "@librus";
-let client = new Librus(null);
-//import axios from "axios";
+// i am going to commit a war crime if this doesn't work
 
 // @ts-ignore
 function SynergiaLogin({ navigation }) {
@@ -15,15 +13,11 @@ function SynergiaLogin({ navigation }) {
   const [eggCounter, setEggCounter] = React.useState(5)
     function logIn(username: string, password: string) {
       if(username != "" && password != "") {
-        client.authorize(username, password).then(function() {
-          let info = client.info.getAccountInfo();
-          Alert.alert("Success", info.student.nameSurname)
-        }).catch((e: any) => {
-          Alert.alert("Error", `${e}`)
-        })
         Alert.alert(username, password)
+        return
       } else {
         Alert.alert("Error", "Please fill out all fields!")
+        return
       }
     }
   const toggleShowPassword = () => { 
@@ -56,21 +50,16 @@ function SynergiaLogin({ navigation }) {
               inputTwo.current.focus();
             }}
           />
-          <View style={{backgroundColor: colors.secondaryBg, paddingHorizontal: 24, paddingVertical: 20, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, flexDirection: "row", alignItems: "center"}}>
-            <View>
-              <TextInput
-                style={{fontSize: 16}}
-                onChangeText={onChangePassword}
-                placeholderTextColor={colors.secondaryText}
-                placeholder={"Password"}
-                value={password}
-                secureTextEntry={!showPassword}
-                // @ts-ignore
-                ref={inputTwo}
-              />
-            </View>
-            <Ionicons name={showPassword ? 'eye-off' : 'eye'} onPress={toggleShowPassword} size={24} color={colors.secondaryText}/>
-          </View>
+          <TextInput
+            style={{backgroundColor: colors.secondaryBg, paddingHorizontal: 24, paddingVertical: 20, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, fontSize: 16}}
+            onChangeText={onChangePassword}
+            placeholderTextColor={colors.secondaryText}
+            placeholder={"Password"}
+            value={password}
+            secureTextEntry={!showPassword}
+            // @ts-ignore
+            ref={inputTwo}
+          />
           <TouchableOpacity onPress={() => logIn(username, password)} style={{backgroundColor: '#985c88', borderRadius: 15, paddingVertical: 16, marginTop: 32, marginHorizontal: 64}} >
             <Text style={{color: "#fff", textAlign:"center", fontSize: 16, fontWeight: "500"}}>Log in</Text>
           </TouchableOpacity>
