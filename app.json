@@ -4,6 +4,9 @@
   "expo": {
     "experiments": {
       "tsconfigPaths": true
+    },
+    "ios": {
+      "bundleIdentifier": "pl.bruhsoftware.libruh"
     }
   }
 }
