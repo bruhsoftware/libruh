@@ -60,8 +60,8 @@ function App() {
       <p style={{backgroundColor: 'blue'}}>b</p>
     )
   })*/
-  //const scheme = useColorScheme();
-  let scheme = 'dark'
+  const scheme = useColorScheme();
+  //let scheme = 'light'
   return (
     <>
     <NavigationContainer theme={scheme === 'dark' ? LibruhThemeDark : LibruhThemeLight }>

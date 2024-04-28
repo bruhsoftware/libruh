@@ -21,7 +21,7 @@ export const LibruhThemeLight = {
 export const LibruhThemeDark = {
     dark: true,
     colors: {
-        primary: '#007aff',
+        primary: '#0984ffff',
         background: 'rgb(1, 1, 1)',
         card: 'rgb(18, 18, 18)',
         text: 'rgb(229, 229, 231)',
