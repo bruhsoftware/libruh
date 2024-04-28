@@ -12,7 +12,9 @@ export const LibruhThemeLight = {
       notification: 'rgb(255, 69, 58)',
       secondaryBg: '#ffffff',
       secondaryText: '#3c3c4399',
-      spacer: '#c6c6c8'
+      label: '#3c3c434c',
+      spacer: '#c6c6c8',
+      danger: '#ff3b30ff'
     },
 }
 
@@ -27,7 +29,9 @@ export const LibruhThemeDark = {
         notification: 'rgb(255, 69, 58)',
         secondaryBg: '#1c1c1e',
         secondaryText: '#ebebf599',
-        spacer: '#383838'
+        label: '#ebebf54c',
+        spacer: '#383838',
+        danger: '#ff453aff'
     },
 }
 

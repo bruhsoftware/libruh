@@ -7,8 +7,8 @@ function SelectRegister({ navigation }) {
     return (
         <View>
             <View>
-                <Section title="Pick your E-register">
-                    Some names may be copyrighted.
+                <Section title="Wybierz swój E-dziennik" style={{marginLeft: 16}}>
+                    Niektóre nazwy mogą być chronione prawami autorskimi.
                 </Section>
                 <SynergiaCard/>
             </View>

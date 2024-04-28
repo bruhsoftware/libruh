@@ -30,25 +30,6 @@ import Section from '@ui/elements/Section';
 import { version } from '@package';
 import { useTheme } from '@react-navigation/native';
 import { LibruhThemeDark, LibruhThemeLight } from '@constants/themes';
-
-const styles = StyleSheet.create({
-    sectionContainer: {
-      marginTop: 32,
-      paddingHorizontal: 24,
-    },
-    sectionTitle: {
-      fontSize: 24,
-      fontWeight: '600',
-    },
-    sectionDescription: {
-      marginTop: 8,
-      fontSize: 18,
-      fontWeight: '400',
-    },
-    highlight: {
-      fontWeight: '700',
-    },
-  });
   
 // @ts-ignore
 function LandingPage({ navigation }): React.JSX.Element {
@@ -61,44 +42,33 @@ function LandingPage({ navigation }): React.JSX.Element {
   
     return (
       <>
-        <View>
+      <ScrollView style={{zIndex: 2}}>
           <Header />
-          <View
-            style={{
-              backgroundColor: colors.background,
-            }}>
-            <Section title="What's this for?">
-              Libruh is a replacement app for the Librus® Synergia school register.
+          <View style={{marginHorizontal: 16, marginVertical: 24, paddingLeft: 16, borderRadius:15, backgroundColor: colors.secondaryBg}}>
+            <Section title="Co to jest?" style={{borderBottomWidth: 1, borderBottomColor: colors.spacer}}>
+              Libruh to zamiennik oficjalnej aplikacji systemu e-dziennika Librus Synergia®.
             </Section>
   
-            <Section title="Why?">
+            <Section title="Po co to komu?" style={{borderBottomWidth: 1, borderBottomColor: colors.spacer}}>
               <Text>
-                Because the official Librus® app is a WebView steaming pile of crap.
+                Bo oficjalna aplikacja Librus to beznadziejne gówno, tzw. Webview.
               </Text>
             </Section>
   
-            <Section title="Is it safe?">
+            <Section title="Czy to jest bezpieczne?">
               <Text onPress={() => Linking.openURL('https://git.parpok.xyz/bruh-software/libruh')} style={[{textDecorationLine: "underline"}]}>
   
-              It's safe. The code for this app is public on our GitLab so you can check it out yourself. You can open the repository by clicking this text.
+              Nasza aplikacja jest bezpieczna. Kod tej aplikacji jest dosępny publicznie na naszym GitLabie. Możesz do niego przejść klikając w ten napis.
   
               </Text>
             </Section>
-  
-            <Spacer size={50} />
-            {/* Alert.alert("Login doesn't work rn.") */}
-            {/*<Button  onPress={() => navigation.navigate('registerSelection')} title="Proceed" accessibilityLabel="Next"/>*/}
-            <View style={{paddingHorizontal: 24}}>
-                <TouchableOpacity onPress={() => navigation.navigate('registerSelection')} style={{backgroundColor: colors.primary, borderRadius: 15, paddingVertical: 15}} >
-                    <Text style={{color: "#fff", textAlign:"center", fontSize: 20, fontWeight: "600"}}>Proceed</Text>
-                </TouchableOpacity>
-            </View>
           </View>
-        </View>
-        <View style={{position: "relative", bottom: -45}}>
-            <Text style={{position: "relative", color: "#999", textAlign: "center", paddingHorizontal: 24, width: Dimensions.get('window').width}}>DEV -  v{version}</Text>
-            <Text style={{position: "relative", color: "#666", textAlign: "center", fontSize: 11, width: Dimensions.get('window').width, paddingHorizontal: 24}}>All trademarks used in this app remain the property of their rightful owners and are used for informational purposes only.</Text>
-        </View>
+          <View style={{paddingHorizontal: 16, marginTop: "auto"}}>
+                <TouchableOpacity onPress={() => navigation.navigate('registerSelection')} style={{backgroundColor: colors.primary, borderRadius: 15, paddingVertical: 16}} >
+                    <Text style={{color: "#fff", textAlign:"center", fontSize: 16, fontWeight: "600"}}>Dalej</Text>
+                </TouchableOpacity>
+          </View>
+        </ScrollView>
       </>
     );
   }

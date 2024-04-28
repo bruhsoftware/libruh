@@ -61,7 +61,7 @@ function App() {
     )
   })*/
   //const scheme = useColorScheme();
-  let scheme = 'light'
+  let scheme = 'dark'
   return (
     <>
     <NavigationContainer theme={scheme === 'dark' ? LibruhThemeDark : LibruhThemeLight }>

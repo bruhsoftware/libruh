@@ -50,10 +50,10 @@ function Login() {
         <Stack.Navigator initialRouteName="home">
           <Stack.Group>
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Landing", headerShown: false}}/>
-            <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "E-register Selection"}}/>
+            <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "Wybór e-dziennika"}}/>
           </Stack.Group>
           <Stack.Group screenOptions={{presentation: 'modal'}}>
-            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus® Synergia - Log in"}}/>
+            <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Zaloguj się"}}/>
             <Stack.Screen name="synergiaEasterEgg" component={SynergiaLoginEasterEgg} options={{headerTitle: ":3"}}/>
           </Stack.Group>
         </Stack.Navigator>

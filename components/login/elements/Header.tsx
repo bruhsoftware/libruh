@@ -10,35 +10,28 @@
 
 import type {ReactNode} from 'react';
 
-import {ImageBackground, Text, StyleSheet} from 'react-native';
+import {ImageBackground, Text, StyleSheet, View, Image} from 'react-native';
 import {useColorScheme} from 'react-native';
 import React from 'react';
 import { useTheme } from '@react-navigation/native';
+import { LibruhThemeDark, LibruhThemeLight } from '@constants/themes';
 
 const Header = (): ReactNode => {
-  const { colors, dark } = useTheme();
+  const {dark} = useTheme();
+  const colors = (dark ? LibruhThemeDark.colors : LibruhThemeLight.colors)
   return (
-    <ImageBackground
-      accessibilityRole="image"
-      testID="new-app-screen-header"
-      source={require('@assets/landing-bg-logo.png')}
-      style={[
-        styles.background,
-        {}
-      ]}
-      imageStyle={[styles.logo, { opacity: (dark ? 0.2 : 0.8)}]}>
-      <Text
+    <View style={{justifyContent: 'center', alignItems: "center", marginTop: 32}}>
+      <Image source={dark ? require("@assets/libruh/logo.png") : require("@assets/libruh/logo_lightbg.png")} style={{width: 327, height: 177, marginTop: 15}}/>
+        <Text
         style={[
           styles.text,
           {
             color: colors.text,
           },
         ]}>
-        Welcome to
-        {'\n'}
-        Libruh
+        Witaj w Libruh!
       </Text>
-    </ImageBackground>
+    </View>
   );
 };
 
@@ -61,7 +54,7 @@ const styles = StyleSheet.create({
     marginBottom: -192,
   },
   text: {
-    fontSize: 40,
+    fontSize: 36,
     fontWeight: '700',
     textAlign: 'center',
   },
