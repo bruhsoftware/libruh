@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { ActivityIndicator, Alert, Button, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { LibruhThemeDark, LibruhThemeLight } from "@constants/themes";
 import { Ionicons } from '@expo/vector-icons';
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native";
 // i am going to commit a war crime if this doesn't work
 
 // @ts-ignore
@@ -15,11 +15,16 @@ function SynergiaLogin({ navigation }) {
   const [isLoading, setIsLoading] = React.useState(false)
     function logIn(username: string, password: string) {
       if(username != "" && password != "") {
-        setIsLoading(true)
-        Alert.alert(username, password, [{text: "OK", style: "destructive", onPress: () => {
-          setIsLoading(false)
-        }}])
-        return
+        if(isLoading) {
+          return
+        } else {
+          setIsLoading(true)
+          Alert.alert(username, password, [{text: "OK", style: "destructive", onPress: () => {
+            setIsLoading(false)
+          }}])
+          //setTimeout(() => {setIsLoading(false)}, 3000)
+          return
+        }
       } else {
         Alert.alert("Błąd", "Proszę wypełnić wszystkie pola!")
         return

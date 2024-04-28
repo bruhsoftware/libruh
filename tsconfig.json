@@ -8,6 +8,9 @@
       "@ui/login/*": [
         "./components/login/*"
       ],
+      "@ui/about/*": [
+        "./components/about/*"
+      ],
       "@ui": [
         "./components/ui/Main.tsx"
       ],
