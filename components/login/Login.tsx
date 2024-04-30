@@ -40,6 +40,8 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import Main from '@ui';
 import SynergiaLoginEasterEgg from '@ui/login/modals/SynergiaLoginEasterEgg';
 import AboutApp from '@ui/about/pages/AboutApp';
+import VersionsModal from '@ui/about/modals/VersionsModal';
+import Acknowledgements from '@ui/about/pages/Acknowledgements';
 
 const Stack = createStackNavigator();
 
@@ -52,9 +54,11 @@ function Login() {
           <Stack.Group>
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Główna", headerShown: false}}/>
             <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "Dzienniki"}}/>
-            <Stack.Screen name="aboutApp" component={AboutApp} options={{headerTitle: "O aplikacji"}}/>
+            <Stack.Screen name="aboutApp" component={AboutApp} options={{headerTitle: "O programie"}}/>
+            <Stack.Screen name="acknowledgements" component={Acknowledgements} options={{headerTitle: "Wykorzystane biblioteki"}}/>
           </Stack.Group>
           <Stack.Group screenOptions={{presentation: 'modal'}}>
+          <Stack.Screen name="versionsModal" component={VersionsModal} options={{headerTitle: "Wersje"}}/>
             <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Zaloguj się"}}/>
             <Stack.Screen name="synergiaEasterEgg" component={SynergiaLoginEasterEgg} options={{headerTitle: ":3"}}/>
           </Stack.Group>

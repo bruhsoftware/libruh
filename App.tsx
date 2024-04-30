@@ -67,6 +67,7 @@ function App() {
     <NavigationContainer theme={scheme === 'dark' ? LibruhThemeDark : LibruhThemeLight }>
       <StatusBar barStyle={scheme === 'dark' ? "light-content" : "dark-content"} animated={true}/>
       <LoginMain/>
+      {/* <Main/> */}
     </NavigationContainer>
     </>
   )

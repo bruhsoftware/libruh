@@ -16,7 +16,7 @@ import { DefaultTheme, DarkTheme } from '@react-navigation/native';
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const storage = new Storage({
@@ -70,8 +70,10 @@ function Main() {
             barStyle={scheme === 'dark' ? "light-content" : "dark-content"}
         />
         <Tab.Navigator initialRouteName="Home" >
-            <Tab.Screen name="Home" component={HomeScreen} options={{tabBarIcon:({color, size}) => (<Ionicons name={"home"} color={color} size={size}/>)}}/>
-            <Tab.Screen name="Details" component={DetailsScreen}  options={{tabBarIcon:({color, size}) => (<Ionicons name={"apps"} color={color} size={size}/>)}}/>
+            <Tab.Screen name="Główna" component={HomeScreen} options={{tabBarIcon:({color, size}) => (<Ionicons name={"home"} color={color} size={size}/>)}}/>
+            <Tab.Screen name="Oceny" component={HomeScreen} options={{tabBarIcon:({color, size}) => (<MaterialCommunityIcons name="star" size={size} color={color} />)}}/>
+            <Tab.Screen name="Plan Lekcji" component={HomeScreen} options={{tabBarIcon:({color, size}) => (<Ionicons name={"calendar"} color={color} size={size}/>)}}/>
+            <Tab.Screen name="Więcej" component={DetailsScreen}  options={{tabBarIcon:({color, size}) => (<Ionicons name={"ellipsis-horizontal"} color={color} size={size}/>)}}/>
         </Tab.Navigator>
     </>
   );

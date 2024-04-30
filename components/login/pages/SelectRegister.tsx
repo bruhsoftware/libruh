@@ -1,4 +1,4 @@
-import { Button, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { Button, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import SynergiaCard from "@ui/login/elements/SynergiaCard";
 import Section from "@ui/elements/Section";
 import { useTheme } from "@react-navigation/native";
@@ -18,10 +18,12 @@ function SelectRegister({ navigation }) {
                 <Text style={{color: colors.secondaryText, marginVertical: 8, marginLeft: 16}}>DOSTĘPNE E-DZIENNIKI</Text>
                 <SynergiaCard/>
                 <View style={{marginHorizontal: 16, marginTop: 8}}>
-                    <TouchableOpacity onPress={() => navigation.navigate('aboutApp')} style={{flexDirection: "row", marginTop: 24, backgroundColor: colors.secondaryBg, paddingLeft: 16, borderRadius: 15}}>
-                        <Text style={{fontSize: 16, paddingRight: 24, paddingVertical: 16, color: colors.primary}}>O aplikacji</Text>
-                        <View style={{marginLeft: "auto", marginRight: 12, justifyContent: "center"}}>
-                            {<Ionicons name="chevron-forward" size={24} color={colors.primary} />}
+                    {/* "About App" item */}
+                    <TouchableOpacity onPress={() => navigation.navigate('aboutApp')} style={{flexDirection: "row", marginTop: 24, paddingVertical: 12, alignItems: "center", backgroundColor: colors.secondaryBg, paddingLeft: 16, borderRadius: 15}}>
+                        <Image source={require('@assets/icons/icon-os.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
+                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>O aplikacji</Text>
+                        <View style={{marginLeft: "auto", marginRight: 14, justifyContent: "center"}}>
+                            {<Ionicons name="chevron-forward" size={16} color={colors.label} />}
                         </View>
                     </TouchableOpacity>
                 </View>
