@@ -1,9 +1,11 @@
-import { Button, Image, Text, View } from "react-native";
+import { Button, Image, Text, TouchableOpacity, View } from "react-native";
 import { LibruhThemeDark, LibruhThemeLight } from "@constants/themes";
 import { useTheme } from "@react-navigation/native";
 import { ScrollView } from "react-native-gesture-handler";
 import * as Device from 'expo-device';
 import React from "react";
+import { Ionicons } from '@expo/vector-icons';
+import * as Updates from 'expo-updates';
 
 import { dependencies } from '@package';
 
@@ -41,6 +43,7 @@ function VersionsModal({ navigation }) {
                         <Text style={{color: colors.label, fontSize: 16}}>{React.version}</Text>
                     </View>
                 </View>
+                {/* React Native */}
                 <View style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}}>
                     <Image source={require('@assets/icons/icon-react.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
                     <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>React Native</Text>
@@ -48,6 +51,16 @@ function VersionsModal({ navigation }) {
                         <Text style={{color: colors.label, fontSize: 16}}>{dependencies['react-native']}</Text>
                     </View>
                 </View>
+            </View>
+            <View style={{marginTop: 24, paddingLeft: 16, borderRadius:15, backgroundColor: colors.secondaryBg}}>
+                {/* Reload app */}
+                <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}} onPress={async () => {await Updates.reloadAsync()}}>
+                        <Image source={require('@assets/icons/icon-reload.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
+                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Przeładuj aplikację</Text>
+                        <View style={{marginLeft: "auto", marginRight: -10, justifyContent: "center"}}>
+                            {<Ionicons name="chevron-forward" size={16} color={colors.label} />}
+                        </View>
+                </TouchableOpacity>
             </View>
         </View>
       </ScrollView>

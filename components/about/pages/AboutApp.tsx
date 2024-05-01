@@ -33,7 +33,7 @@ function AboutApp({ navigation }) {
                     {/* "GitLab" item */}
                     <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, borderBottomColor: colors.spacer}} onPress={() => {Linking.openURL('https://git.parpok.xyz/bruh-software/libruh')}}>
                         <Image source={require('@assets/icons/icon-gitlab.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
-                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Kod źródłowy (GitLab)</Text>
+                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>GitLab Libruh'a</Text>
                         <View style={{marginLeft: "auto", marginRight: -10, justifyContent: "center"}}>
                             {<Ionicons name="chevron-forward" size={16} color={colors.label} />}
                         </View>
