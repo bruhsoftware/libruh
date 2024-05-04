@@ -1,6 +1,12 @@
 {
   "name": "libruh",
   "displayName": "libruh",
+  "icon": "./assets/icon.png",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#000000"
+  },
   "expo": {
     "experiments": {
       "tsconfigPaths": true

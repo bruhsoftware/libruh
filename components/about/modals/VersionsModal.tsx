@@ -1,7 +1,6 @@
-import { Button, Image, Text, TouchableOpacity, View } from "react-native";
+import { Button, Image, Text, TouchableOpacity, View, ScrollView } from "react-native";
 import { LibruhThemeDark, LibruhThemeLight } from "@constants/themes";
 import { useTheme } from "@react-navigation/native";
-import { ScrollView } from "react-native-gesture-handler";
 import * as Device from 'expo-device';
 import React from "react";
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +24,7 @@ function VersionsModal({ navigation }) {
                         <Text style={{color: colors.label, fontSize: 16}}>{Device.modelName} ({Device.deviceYearClass || "?"})</Text>
                     </View>
                 </View>
-                {/* iOS Version */}
+                {/* OS Version */}
                 <View style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}}>
                     <Image source={require('@assets/icons/icon-os.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
                     <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>System</Text>

@@ -16,15 +16,25 @@ function AboutApp({ navigation }) {
             <View style={{paddingHorizontal: 16}}>
                 <Image source={dark ? require("@assets/libruh/logo.png") : require("@assets/libruh/logo_lightbg.png")} style={{width: 327, height: 177, marginTop: 8, marginLeft: 12}}/>
                 {/* Section Header */}
-                <Text style={{color: colors.secondaryText, marginVertical: 8, marginLeft: 16}}>O APLIKACJI</Text>
-                <View style={{paddingLeft: 16, borderRadius:15, backgroundColor: colors.secondaryBg}}>
+                <Text style={{color: colors.secondaryText, marginVertical: 5, marginLeft: 16}}>O APLIKACJI</Text>
+                <View style={{paddingLeft: 16, borderRadius: 15, backgroundColor: colors.secondaryBg}}>
                     {/* Section Title */}
                     <Section title="Libruh" style={{color: colors.text, paddingVertical: 16, paddingRight: 24, borderBottomWidth: 1, borderBottomColor: colors.spacer}}>Alternatywny klient do e-dziennika Synergia.</Section>
-                    <TouchableOpacity activeOpacity={1} style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}} onPress={() => (eggCounter === 0 ? (navigation.navigate('versionsModal'), setEggCounter(5)) : setEggCounter(eggCounter-1))}>
-                        <Image source={require('@assets/icons/icon-version.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
-                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Wersja</Text>
+                    {/* Librus api item */}
+                    <TouchableOpacity activeOpacity={1} style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, borderBottomColor: colors.spacer}} onPress={() => (eggCounter === 0 ? (navigation.navigate('versionsModal'), setEggCounter(5)) : setEggCounter(eggCounter-1))}>
+                        <Image source={require('@assets/icons/icon-synergia.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
+                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Wersja API</Text>
                         <View style={{marginLeft: "auto", marginRight: -6, justifyContent: "center"}}>
-                            <Text style={{color: colors.label, fontSize: 16}}>v{version}</Text>
+                            <Text style={{color: colors.label, fontSize: 16}}>v. undefined</Text>
+                        </View>
+                    </TouchableOpacity>
+                    {/* Changelog item */}
+                    <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}} onPress={() => {Alert.alert("Error", "To be implemented")}}>
+                        <Image source={require('@assets/icons/icon-changelog.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
+                        <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Co nowego?</Text>
+                        <View style={{marginLeft: "auto", marginRight: -10, justifyContent: "center", flexDirection: "row"}}>
+                            <Text style={{color: colors.label, fontSize: 16, marginRight: 4, textAlign: "center"}}>v{version}</Text>
+                            {<Ionicons name="chevron-forward" size={16} color={colors.label} />}
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -49,7 +59,7 @@ function AboutApp({ navigation }) {
                 </View>
                 <Text style={{color: colors.secondaryText, marginVertical: 8, marginTop: 24, marginLeft: 16}}>INNE</Text>
                 <View style={{paddingLeft: 16, borderRadius:15, backgroundColor: colors.secondaryBg}}>
-                    {/* "Authors" item */}
+                    {/* Authors item */}
                     <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, borderBottomColor: colors.spacer}} onPress={() => {Alert.alert("Error", "To be implemented")}}>
                         <Image source={require('@assets/icons/icon-authors.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
                         <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Autorzy</Text>
@@ -57,7 +67,7 @@ function AboutApp({ navigation }) {
                             {<Ionicons name="chevron-forward" size={16} color={colors.label} />}
                         </View>
                     </TouchableOpacity>
-                    {/* "Libraries/Acknowledgements" item */}
+                    {/* Libraries/Acknowledgements item */}
                     <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center"}} onPress={() => {navigation.navigate('acknowledgements')}}>
                         <Image source={require('@assets/icons/icon-libraries.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
                         <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Wykorzystane biblioteki</Text>
@@ -66,6 +76,8 @@ function AboutApp({ navigation }) {
                         </View>
                     </TouchableOpacity>
                 </View>
+                {/* CREDITS text */}
+                <Text style={{marginHorizontal: 24, textAlign: "center", color: colors.secondaryText, marginTop: 28, paddingBottom: 24}}>MADE WITH ❤️ IN 🇵🇱 BY BRUH SOFTWARE{'\n'}{'\n'}Libruh is not affiliated with nor endorsed by "Librus Synergia®" - Librus sp. z. o. o. All rights go to their respective owners.</Text>
             </View>
         </ScrollView>
     );
