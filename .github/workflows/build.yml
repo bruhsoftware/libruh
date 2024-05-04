@@ -64,7 +64,7 @@ jobs:
         with:
           timeout_minutes: 10
           max_attempts: 10
-          command: yarn install; yarn postinstall
+          command: yarn install
 
       - name: Pod Install
         run: cd ios && rm Podfile.lock && pod install --repo-update
