@@ -52,7 +52,7 @@ jobs:
       - name: Get Recent Commit Tag
         id: get_commit_tag
         run: |
-          COMMIT_TAG=$(git describe --tags --abbrev=0)
+          COMMIT_TAG=$(git describe --tags --always --abbrev=0)
           echo "COMMIT_TAG=${COMMIT_TAG}" >> $GITHUB_ENV
 
       - name: Display Commit Tag
