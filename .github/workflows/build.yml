@@ -1,4 +1,4 @@
-name: Libruh Auto-build
+name: Build Libruh release
 on:
   push:
     tags:
