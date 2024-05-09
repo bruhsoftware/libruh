@@ -1,66 +1,68 @@
 # Libruh
 
 # Roadmap
-    
-- [ ] Login/Landing   
-    - [x] Login.tsx
-        - [x] LandingPage.tsx
-        - [ ] SelectRegister.tsx
-        - [x] SynergiaLogin.tsx
-        - [x] SynergiaLoginEasterEgg.tsx
+
+- [ ] Login/Landing
+  - [x] Login.tsx
+    - [x] LandingPage.tsx
+    - [ ] SelectRegister.tsx
+    - [x] SynergiaLogin.tsx
+    - [x] SynergiaLoginEasterEgg.tsx
 - [ ] Main UI
-    - [x] Main.tsx
-        - [ ] Home.tsx
-        - [ ] Grades.tsx
-        - [ ] Attendance.tsx
-        - [ ] Timetable.tsx
-        - [ ] Messages.tsx
-        - [ ] Homework.tsx
-        - [ ] Other
-            - [ ] Annoucements.tsx
-            - [ ] Settings.tsx
+  - [x] Main.tsx
+    - [ ] Home.tsx
+    - [ ] Grades.tsx
+    - [ ] Attendance.tsx
+    - [ ] Timetable.tsx
+    - [ ] Messages.tsx
+    - [ ] Homework.tsx
+    - [ ] Other
+      - [ ] Annoucements.tsx
+      - [ ] Settings.tsx
 - [ ] Misc UI
-    - [ ] Settings
-        - [ ] HomeSettings.tsx
-        - [ ] GradeSettings.tsx
-        - [ ] AttendanceSettings.tsx
-        - [ ] TimetableSettings.tsx
-        - [ ] MessageSettings.tsx
-        - [ ] HomeworkSettings.tsx
-    - [ ] About Libruh
-        - [x] AboutApp.tsx
-        - [x] Acknowledgements.tsx
-        - [ ] Authors.tsx
-        - [x] VersionsModal.tsx
-        - [ ] Changelog.tsx
-            - [ ] Pulling Changelog from GitLab
+  - [ ] Settings
+    - [ ] HomeSettings.tsx
+    - [ ] GradeSettings.tsx
+    - [ ] AttendanceSettings.tsx
+    - [ ] TimetableSettings.tsx
+    - [ ] MessageSettings.tsx
+    - [ ] HomeworkSettings.tsx
+  - [ ] About Libruh
+    - [x] AboutApp.tsx
+    - [x] Acknowledgements.tsx
+    - [ ] Authors.tsx
+    - [x] VersionsModal.tsx
+    - [ ] Changelog.tsx
+      - [ ] Pulling Changelog from GitLab
 - [ ] Synergia API
-    - [ ] Logging in and storing token
-    - [ ] Checking user's school data
-    - [ ] Pulling the Timetable
-        - [ ] Current week
-        - [ ] Select period
-    - [ ] Pulling the Grades
-        - [ ] Semester 1
-        - [ ] Semester 2
-    - [ ] Pulling the Attendance
-        - [ ] Semester 1
-        - [ ] Semester 2
-        - [ ] Overall
-    - [ ] Messages
-        - [ ] Pulling the Messages
-        - [ ] Mark as read/unread
-        - [ ] Sending messages
-            - [ ] if possible, bypass "Mobilne Dodatki" requirement
-    - [ ] Homework
-        - [ ] Pulling the Homework
-        - [ ] Mark as read/unread
-        - [ ] Sending in Homework
-    - [ ] Annoucements
+  - [ ] Logging in and storing token
+  - [ ] Checking user's school data
+  - [ ] Pulling the Timetable
+    - [ ] Current week
+    - [ ] Select period
+  - [ ] Pulling the Grades
+    - [ ] Semester 1
+    - [ ] Semester 2
+  - [ ] Pulling the Attendance
+    - [ ] Semester 1
+    - [ ] Semester 2
+    - [ ] Overall
+  - [ ] Messages
+    - [ ] Pulling the Messages
+    - [ ] Mark as read/unread
+    - [ ] Sending messages
+      - [ ] if possible, bypass "Mobilne Dodatki" requirement
+  - [ ] Homework
+    - [ ] Pulling the Homework
+    - [ ] Mark as read/unread
+    - [ ] Sending in Homework
+  - [ ] Annoucements
 
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+
+## **BTW React Native prefers Yarn so just use yarn to make it work**
 
 ## Step 1: Start the Expo server
 

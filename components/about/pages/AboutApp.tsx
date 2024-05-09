@@ -14,7 +14,7 @@ function AboutApp({ navigation }) {
     return (
         <ScrollView>
             <View style={{paddingHorizontal: 16}}>
-                <Image source={dark ? require("@assets/libruh/logo.png") : require("@assets/libruh/logo_lightbg.png")} style={{width: 327, height: 177, marginTop: 8, marginLeft: 12}}/>
+                <Image source={dark ? require("@assets/libruh/logo.png") : require("@assets/libruh/logo_lightbg.png")} style={{width: 327, height: 177, alignSelf: "center", justifyContent: "center"}}/>
                 {/* Section Header */}
                 <Text style={{color: colors.secondaryText, marginVertical: 5, marginLeft: 16}}>O APLIKACJI</Text>
                 <View style={{paddingLeft: 16, borderRadius: 15, backgroundColor: colors.secondaryBg}}>
