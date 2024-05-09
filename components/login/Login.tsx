@@ -42,6 +42,7 @@ import SynergiaLoginEasterEgg from '@ui/login/modals/SynergiaLoginEasterEgg';
 import AboutApp from '@ui/about/pages/AboutApp';
 import VersionsModal from '@ui/about/modals/VersionsModal';
 import Acknowledgements from '@ui/about/pages/Acknowledgements';
+import Authors from '@ui/about/pages/Authors';
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,7 @@ function Login() {
             <Stack.Screen name="home" component={LandingPage} options={{headerTitle: "Główna", headerShown: false}}/>
             <Stack.Screen name="registerSelection" component={SelectRegister} options={{headerTitle: "Dzienniki"}}/>
             <Stack.Screen name="aboutApp" component={AboutApp} options={{headerTitle: "O aplikacji"}}/>
+            <Stack.Screen name='authors' component={Authors} options={{headerTitle: "Autorzy"}}/>
             <Stack.Screen name="acknowledgements" component={Acknowledgements} options={{headerTitle: "Podziękowania"}}/>
             <Stack.Screen name="synergiaLogin" component={SynergiaLogin} options={{headerTitle: "Librus Synergia®"}}/>
           </Stack.Group>

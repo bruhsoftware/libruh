@@ -25,7 +25,8 @@
       "tsconfigPaths": true
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-asset"
     ]
   }
 }

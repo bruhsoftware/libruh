@@ -60,7 +60,7 @@ function AboutApp({ navigation }) {
                 <Text style={{color: colors.secondaryText, marginVertical: 8, marginTop: 24, marginLeft: 16}}>INNE</Text>
                 <View style={{paddingLeft: 16, borderRadius:15, backgroundColor: colors.secondaryBg}}>
                     {/* Authors item */}
-                    <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, borderBottomColor: colors.spacer}} onPress={() => {Alert.alert("Error", "To be implemented")}}>
+                    <TouchableOpacity style={{paddingVertical: 12, paddingRight: 24, flexDirection: "row", alignItems: "center", borderBottomWidth: 1, borderBottomColor: colors.spacer}} onPress={() => navigation.navigate('authors')}>
                         <Image source={require('@assets/icons/icon-authors.png')} style={{width: 26, height: 26, marginRight: 10, borderRadius: 5 }}></Image>
                         <Text style={{color: colors.text, fontSize: 16, fontWeight: "600"}}>Autorzy</Text>
                         <View style={{marginLeft: "auto", marginRight: -10, justifyContent: "center"}}>
